@@ -1,0 +1,403 @@
+
+/* Import Google Fonts - Space Grotesk */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+/* Root Variables - Anthropic Theme */
+:root {
+    --primary-accent: #d97757;
+    --background-color: #fbfaf8;
+    --secondary-background: #f0ede5;
+    --text-color: #3d3a2a;
+    --text-secondary: #6b6757;
+    --success-green: #7c9a6d;
+    --warning-orange: #d97757;
+    --danger-red: #c85a54;
+    --info-blue: #7a8fa3;
+    
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Space Grotesk', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+    
+    --border-radius: 8px;
+    --shadow-sm: 0 1px 3px rgba(61, 58, 42, 0.08);
+    --shadow-md: 0 4px 6px rgba(61, 58, 42, 0.1);
+    --shadow-lg: 0 10px 25px rgba(61, 58, 42, 0.12);
+}
+
+/* Global Styles */
+.stApp {
+    font-family: var(--font-body);
+    background-color: var(--background-color);
+}
+
+/* Force light background for main content */
+.main {
+    background-color: var(--background-color);
+}
+
+/* Main Content Area */
+.main .block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: var(--font-heading) !important;
+    color: var(--text-color) !important;
+    font-optical-sizing: auto;
+}
+
+h1 {
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+    border-bottom: 2px solid var(--primary-accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem !important;
+    color: var(--text-color) !important;
+}
+
+h2 {
+    font-size: 1.5rem !important;
+    font-weight: 500 !important;
+    margin-top: 1.5rem !important;
+    color: var(--text-color) !important;
+}
+
+h3 {
+    font-size: 1.25rem !important;
+    font-weight: 500 !important;
+    color: var(--text-secondary) !important;
+}
+
+p, span, div {
+    font-family: var(--font-body);
+    color: var(--text-color);
+}
+
+/* Sidebar Styling */
+section[data-testid="stSidebar"] {
+    background-color: var(--secondary-background) !important;
+}
+
+section[data-testid="stSidebar"] .css-1d391kg {
+    background-color: var(--secondary-background);
+}
+
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3,
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] span,
+section[data-testid="stSidebar"] label {
+    color: var(--text-color) !important;
+}
+
+/* Sidebar Navigation */
+section[data-testid="stSidebar"] .stButton button {
+    background-color: transparent;
+    color: var(--text-color);
+    border: none;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    border-radius: var(--border-radius);
+    transition: all 0.2s ease;
+}
+
+section[data-testid="stSidebar"] .stButton button:hover {
+    background-color: var(--primary-accent);
+    color: var(--background-color);
+}
+
+/* Primary Buttons */
+.stButton button[kind="primary"],
+.stButton button[data-testid="baseButton-primary"] {
+    background-color: var(--primary-accent) !important;
+    color: var(--background-color) !important;
+    border: none !important;
+    font-family: var(--font-body) !important;
+    font-weight: 500 !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: var(--border-radius) !important;
+    transition: all 0.2s ease !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.stButton button[kind="primary"]:hover,
+.stButton button[data-testid="baseButton-primary"]:hover {
+    background-color: #c46847 !important;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md) !important;
+}
+
+/* Secondary Buttons */
+.stButton button {
+    background-color: var(--secondary-background);
+    color: var(--text-color);
+    border: 1px solid rgba(61, 58, 42, 0.15);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: all 0.2s ease;
+}
+
+.stButton button:hover {
+    background-color: var(--primary-accent);
+    border-color: var(--primary-accent);
+    color: var(--background-color);
+}
+
+/* Form Inputs */
+.stTextInput input,
+.stSelectbox div[data-baseweb="select"] > div,
+.stNumberInput input,
+.stTextArea textarea {
+    border: 1px solid rgba(61, 58, 42, 0.2) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 0.5rem 0.75rem !important;
+    font-family: var(--font-body) !important;
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+.stTextInput input:focus,
+.stSelectbox div[data-baseweb="select"] > div:focus-within,
+.stNumberInput input:focus,
+.stTextArea textarea:focus {
+    border-color: var(--primary-accent) !important;
+    box-shadow: 0 0 0 2px rgba(217, 119, 87, 0.15) !important;
+}
+
+/* DataFrames / Tables */
+.stDataFrame {
+    border: 1px solid rgba(61, 58, 42, 0.15);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.stDataFrame table {
+    font-family: var(--font-body);
+}
+
+.stDataFrame thead th {
+    background-color: var(--secondary-background) !important;
+    font-weight: 500 !important;
+    color: var(--text-color) !important;
+}
+
+.stDataFrame tbody tr:hover {
+    background-color: rgba(217, 119, 87, 0.08) !important;
+}
+
+/* Cards / Containers */
+div[data-testid="stVerticalBlock"] > div:has(> div[data-testid="stMetric"]) {
+    background-color: var(--background-color);
+    border: 1px solid rgba(61, 58, 42, 0.12);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Metrics */
+.stMetric {
+    background-color: var(--background-color);
+}
+
+.stMetric label {
+    font-family: var(--font-body);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.stMetric [data-testid="stMetricValue"] {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Status Badges */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.badge-pending { background-color: #f5e6d3; color: #8b6f47; }
+.badge-in_progress { background-color: #d4e3f0; color: #4a6b85; }
+.badge-waiting_parts { background-color: #f0d5d5; color: #8b4a4a; }
+.badge-completed { background-color: #d9e8d4; color: #5a7a4f; }
+.badge-invoiced { background-color: #d9e8e8; color: #4a6b6b; }
+.badge-cancelled { background-color: #e5e3e0; color: #6b6757; }
+.badge-paid { background-color: #d9e8d4; color: #5a7a4f; }
+.badge-unpaid { background-color: #f0d5d5; color: #8b4a4a; }
+.badge-partial { background-color: #f5e6d3; color: #8b6f47; }
+
+/* Success/Error Messages */
+.element-container .stSuccess {
+    background-color: #d9e8d4;
+    border-left: 4px solid var(--success-green);
+    color: #4a5f3f;
+}
+
+.element-container .stError {
+    background-color: #f0d5d5;
+    border-left: 4px solid var(--danger-red);
+    color: #7a3f3a;
+}
+
+.element-container .stWarning {
+    background-color: #f5e6d3;
+    border-left: 4px solid var(--warning-orange);
+    color: #7a5a3a;
+}
+
+.element-container .stInfo {
+    background-color: #d9e8e8;
+    border-left: 4px solid var(--info-blue);
+    color: #4a5a6b;
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0;
+    background-color: var(--secondary-background);
+    border-radius: var(--border-radius);
+    padding: 0.25rem;
+}
+
+.stTabs [data-baseweb="tab"] {
+    font-family: var(--font-body);
+    color: var(--text-secondary);
+    border-radius: calc(var(--border-radius) - 4px);
+    padding: 0.5rem 1rem;
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: var(--primary-accent) !important;
+    color: var(--background-color) !important;
+    font-weight: 500;
+}
+
+/* Expander */
+.streamlit-expanderHeader {
+    font-family: var(--font-body);
+    font-weight: 500;
+    background-color: var(--secondary-background);
+    border-radius: var(--border-radius);
+}
+
+/* Tooltips */
+.stTooltip {
+    font-family: var(--font-body);
+}
+
+/* Loading Spinner */
+.stSpinner > div {
+    border-color: var(--primary-accent) transparent transparent transparent;
+}
+
+/* Custom Header Bar */
+.header-bar {
+    background-color: var(--secondary-background);
+    padding: 1rem 2rem;
+    margin: -2rem -2rem 2rem -2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(61, 58, 42, 0.12);
+}
+
+.header-bar h1 {
+    color: var(--text-color) !important;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    border: none;
+}
+
+/* Login Page Specific */
+.login-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--background-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(61, 58, 42, 0.12);
+}
+
+.login-container h1 {
+    text-align: center;
+    border-bottom: none;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(61, 58, 42, 0.12);
+    transition: all 0.2s ease;
+}
+
+.dashboard-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .main .block-container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    .stMetric [data-testid="stMetricValue"] {
+        font-size: 1.25rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .stSidebar,
+    .stButton,
+    .stDownloadButton {
+        display: none !important;
+    }
+    
+    .main .block-container {
+        padding: 0;
+    }
+    
+    body {
+        font-size: 12pt;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--secondary-background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(61, 58, 42, 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(61, 58, 42, 0.5);
+}
